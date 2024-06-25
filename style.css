@@ -1,0 +1,85 @@
+body,html{
+  margin: 0;
+  padding: 0;
+  background-color: #44d5fc;
+  
+}
+.clock{
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 40px;
+  border-radius: 50%;
+  border: 20px solid white;
+  box-shadow: inset 0px 0px 2px 1px #0000001f, 0px 0px 2px 1px;
+  background-image: url(clk\ img.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.clock::after{
+  content: '';
+  display: block;
+  width: 16px;
+  height: 15px;
+  background: black;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  border: 2px solid white;
+
+}
+#second,#minute,#hour{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+#second{
+  z-index: 3;
+}
+
+#minute{
+  z-index: 2;
+}
+
+#hour{
+  z-index: 1;
+}
+
+#second::before,#minute::before,#hour::before,#second::after{
+  content: '';
+  display: block;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  transform: translate(-50%,-100%);
+  border-radius: 10px;
+}
+#second::before{
+  width: 1px;
+  height: 80px;
+  background: red;
+
+}
+#second::after{
+  width: 1px;
+  height: 20px;
+  background: red;
+  transform: translate(-50%,0);
+
+}
+#minute::before{
+  width: 2px;
+  height: 60px;
+  background: gray;
+}
+
+#hour::before{
+  width: 4px;
+  height: 50px;
+  background: rgb(8, 4, 130);
+}
